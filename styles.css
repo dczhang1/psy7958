@@ -1,0 +1,147 @@
+body { font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* Print Styles */
+@media print {
+  /* Print-only title */
+  .print-title {
+    display: block !important;
+    text-align: center !important;
+    font-size: 24pt !important;
+    font-weight: bold !important;
+    margin-bottom: 2em !important;
+    page-break-after: always !important;
+  }
+  
+  /* Hide interactive elements */
+  header, 
+  #mobile-menu-btn,
+  #mobile-menu,
+  .accordion-header svg,
+  button,
+  #expand-current-week,
+  .quick-access-section {
+    display: none !important;
+  }
+  
+  /* Expand all accordion sections */
+  .accordion-panel {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+  
+  /* Remove shadows and backgrounds for cleaner print */
+  .shadow-md, .shadow-lg, .shadow-sm {
+    box-shadow: none !important;
+  }
+  
+  .bg-blue-50, .bg-gray-50, .bg-yellow-50, .bg-green-50, .bg-red-50,
+  .bg-gradient-to-r {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  /* Optimize typography for print */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: black !important;
+    background: white !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid !important;
+  }
+  
+  /* Ensure proper page breaks */
+  section {
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+  }
+  
+  /* Optimize tables for print */
+  table {
+    font-size: 10pt !important;
+    border-collapse: collapse !important;
+  }
+  
+  th, td {
+    border: 1px solid #d1d5db !important;
+    padding: 8px !important;
+  }
+  
+  /* Remove decorative elements */
+  .rounded-lg, .rounded-xl {
+    border-radius: 0 !important;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Add page numbers */
+  @page {
+    margin: 1in;
+    @bottom-center {
+      content: counter(page);
+    }
+  }
+  
+  /* Add title page */
+  .header-section {
+    page-break-after: always !important;
+  }
+  
+  /* Compact spacing for print */
+  .mb-8, .mb-6, .mb-4 {
+    margin-bottom: 0.5em !important;
+  }
+  
+  .p-6, .p-8, .p-4 {
+    padding: 0.5em !important;
+  }
+  
+  /* Ensure reading list is fully expanded and readable */
+  .reading-list-section {
+    page-break-inside: auto !important;
+  }
+  
+  .reading-list-section .accordion-panel {
+    margin-bottom: 1em !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding-bottom: 1em !important;
+  }
+  
+  /* Add section headers for better organization */
+  .accordion-header {
+    background: #f3f4f6 !important;
+    padding: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    font-weight: bold !important;
+    border: 1px solid #d1d5db !important;
+  }
+  
+  /* Hide current week indicators in print */
+  .current-week-indicator {
+    display: none !important;
+  }
+  
+  /* Improve list readability in print */
+  ul, ol {
+    margin-left: 1em !important;
+  }
+  
+  li {
+    margin-bottom: 0.25em !important;
+  }
+  
+  /* Better spacing for reading list items */
+  .reading-list-section li {
+    margin-bottom: 0.5em !important;
+    line-height: 1.3 !important;
+  }
+} 
